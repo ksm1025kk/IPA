@@ -1,0 +1,49 @@
+server:
+  port: 8082
+
+
+# database ?? ??
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_url}
+    username: ${DB_username}
+    password: ${DB_password}
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update  # DDL?? ??
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  resources:
+    static-locations=classpath:/static/:
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+
+  spring:
+    devtools:
+      livereload:
+        enabled: true
+    freemarker:
+      cache: false
+
+  logging:
+    level:
+      root: debug
+
+
+
+
+api.toss.clientKey: test_ck_6bJXmgo28eEX5LOZe16W8LAnGKWx
+
+api.toss.secretKey: test_sk_LkKEypNArW2PPmGx2XpQVlmeaxYG
